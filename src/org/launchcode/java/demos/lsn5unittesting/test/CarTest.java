@@ -1,4 +1,5 @@
 package org.launchcode.java.demos.lsn5unittesting.test;
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import org.launchcode.java.demos.lsn5unittesting.main.Car;
@@ -6,6 +7,13 @@ import org.launchcode.java.demos.lsn5unittesting.main.Car;
 public class CarTest {
 
     //TODO: add emptyTest so we can configure our runtime environment (remove this test before pushing to your personal GitLab account)
+    Car test_car;
+
+    @Before
+    public void createCarObject() {
+        test_car = new Car("Toyota", "Prius", 10, 50);
+    }
+
     @Test
     public void emptyTest() {
         assertEquals(10,10,.001);
@@ -13,7 +21,7 @@ public class CarTest {
     //TODO: constructor sets gasTankLevel properly
     @Test
     public void testInitialGasTank() {
-        Car test_car = new Car("Toyota", "Prius", 10, 50);
+        //Car test_car = new Car("Toyota", "Prius", 10, 50);
         assertEquals(10, test_car.getGasTankLevel(), .001);
     }
     //TODO: gasTankLevel is accurate after driving within tank range
